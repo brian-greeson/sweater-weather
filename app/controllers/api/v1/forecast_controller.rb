@@ -1,7 +1,8 @@
 class Api::V1::ForecastController < Api::V1::BaseController
 
   def index
-    location = LocationService(forecast_params)
+    location = LocationService.geocode(forecast_params)
+    binding.pry
     render json: location
   end
 
