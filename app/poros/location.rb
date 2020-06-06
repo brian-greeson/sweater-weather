@@ -7,6 +7,6 @@ class Location
     @county = location_json[:results][0][:address_components][1][:long_name]
     @country = location_json[:results][0][:address_components][3][:long_name]
     @lat = location_json[:results][0][:geometry][:location][:lat]
-    @long = location_json[:results][0][:geometry][:location][:long]
+    @long = location_json[:results][0][:geometry][:location][:lng]
   end
 end
