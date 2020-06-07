@@ -2,7 +2,8 @@ require "rails_helper"
 RSpec.describe "forcast serializer" do
   describe "when provided with a hash of forecast data" do
     it "it can output a forecast object" do
-      forecast_data = File.read("./fixtures/forecast_return_data.json")
+      forecast_json = File.read("./fixtures/forecast_return_data.json")
+      forecast_data = JSON.parse(forecast_json, symbolize_names: true)
       forecast_object = ForecastSerializer.injest(forecast_data)
 
       expect(forecast_object.class).to eq(Forecast)

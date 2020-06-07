@@ -1,6 +1,10 @@
 class ForecastSerializer
+  attr_reader :current
   def self.injest(forecast_data)
-    Forecast.new
+    forecast = Forecast.new
+    forecast.current = WeatherConditions.new(forecast_data[:current])
+    forecast
   end
+
 
 end
