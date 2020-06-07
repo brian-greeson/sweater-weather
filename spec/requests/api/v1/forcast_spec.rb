@@ -7,7 +7,7 @@ RSpec.describe "forcast api", type: :request  do
     end
 
     it "Gets the coordinates of the location param" do
-      VCR.use_cassette('google_location') do
+      VCR.use_cassette('forecast') do
         location_params = {location: "denver, co"}
         get @api_url + "forecast", params: location_params
       end
@@ -42,7 +42,7 @@ RSpec.describe "forcast api", type: :request  do
       expect(response_json[:data][:forecast][:day][:accumilation]).to eq("10/10/99")
       expect(response_json[:data][:forecast][:day][:temp_high]).to eq("10/10/99")
       expect(response_json[:data][:forecast][:day][:temp_low]).to eq("10/10/99")
-  
+
     end
   end
 end
