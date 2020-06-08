@@ -1,18 +1,16 @@
-class RestaurantService
+class RestaurantService < BaseService
 
   def self.one_restaurant(location)
-    service = RestaurantService.new
-    response = service.search(location)
+    response = RestaurantService.new.search(location)
     Restaurant.new(response[:restaurants][0][:restaurant])
   end
-
 
   def search(location)
     response = connection.get("search") do |g|
       g.params['lat'] = location.lat
       g.params['lon'] = location.long
     end
-    JSON.parse(response.body, symbolize_names: true)
+    parsed_response(response)
   end
 
   private
