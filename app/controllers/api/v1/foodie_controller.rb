@@ -14,8 +14,8 @@ class Api::V1::FoodieController < Api::V1::BaseController
     food_trip.data[:attributes][:forecast][:summary] = end_forecast.current.description
     food_trip.data[:attributes][:forecast][:temperature] = end_forecast.current.temp
 
-    food_trip.data[:attributes][:restaurant][:name] 
-    food_trip.data[:attributes][:restaurant][:address]
+    food_trip.data[:attributes][:restaurant][:name] = end_resturant[:restaurants][0][:restaurant][:name]
+    food_trip.data[:attributes][:restaurant][:address] = end_resturant[:restaurants][0][:restaurant][:location][:address]
     render json: food_trip.to_json
   end
 
