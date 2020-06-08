@@ -1,0 +1,214 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=chicago,%20il&key=<GOOGLE_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 08 Jun 2020 02:32:54 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Vary:
+      - Accept-Language
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Goog-Maps-Metro-Area:
+      - Chicago, IL
+      Server:
+      - mafe
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=45
+      Alt-Svc:
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443";
+        ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+           "results" : [
+              {
+                 "address_components" : [
+                    {
+                       "long_name" : "Chicago",
+                       "short_name" : "Chicago",
+                       "types" : [ "locality", "political" ]
+                    },
+                    {
+                       "long_name" : "Cook County",
+                       "short_name" : "Cook County",
+                       "types" : [ "administrative_area_level_2", "political" ]
+                    },
+                    {
+                       "long_name" : "Illinois",
+                       "short_name" : "IL",
+                       "types" : [ "administrative_area_level_1", "political" ]
+                    },
+                    {
+                       "long_name" : "United States",
+                       "short_name" : "US",
+                       "types" : [ "country", "political" ]
+                    }
+                 ],
+                 "formatted_address" : "Chicago, IL, USA",
+                 "geometry" : {
+                    "bounds" : {
+                       "northeast" : {
+                          "lat" : 42.023131,
+                          "lng" : -87.52366099999999
+                       },
+                       "southwest" : {
+                          "lat" : 41.6443349,
+                          "lng" : -87.9402669
+                       }
+                    },
+                    "location" : {
+                       "lat" : 41.8781136,
+                       "lng" : -87.6297982
+                    },
+                    "location_type" : "APPROXIMATE",
+                    "viewport" : {
+                       "northeast" : {
+                          "lat" : 42.023131,
+                          "lng" : -87.52366099999999
+                       },
+                       "southwest" : {
+                          "lat" : 41.6443349,
+                          "lng" : -87.9402669
+                       }
+                    }
+                 },
+                 "place_id" : "ChIJ7cv00DwsDogRAMDACa2m4K8",
+                 "types" : [ "locality", "political" ]
+              }
+           ],
+           "status" : "OK"
+        }
+    http_version: null
+  recorded_at: Mon, 08 Jun 2020 02:32:53 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/place/details/json?key=<GOOGLE_KEY>&place_id=ChIJ7cv00DwsDogRAMDACa2m4K8
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Date:
+      - Mon, 08 Jun 2020 02:32:54 GMT
+      Expires:
+      - Mon, 08 Jun 2020 02:37:54 GMT
+      Cache-Control:
+      - public, max-age=300
+      Vary:
+      - Accept-Language
+      Server:
+      - scaffolding on HTTPServer2
+      Content-Length:
+      - '2671'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=67
+      Alt-Svc:
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443";
+        ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ewogICAiaHRtbF9hdHRyaWJ1dGlvbnMiIDogW10sCiAgICJyZXN1bHQiIDogewogICAgICAiYWRkcmVzc19jb21wb25lbnRzIiA6IFsKICAgICAgICAgewogICAgICAgICAgICAibG9uZ19uYW1lIiA6ICJDaGljYWdvIiwKICAgICAgICAgICAgInNob3J0X25hbWUiIDogIkNoaWNhZ28iLAogICAgICAgICAgICAidHlwZXMiIDogWyAibG9jYWxpdHkiLCAicG9saXRpY2FsIiBdCiAgICAgICAgIH0sCiAgICAgICAgIHsKICAgICAgICAgICAgImxvbmdfbmFtZSIgOiAiQ29vayBDb3VudHkiLAogICAgICAgICAgICAic2hvcnRfbmFtZSIgOiAiQ29vayBDb3VudHkiLAogICAgICAgICAgICAidHlwZXMiIDogWyAiYWRtaW5pc3RyYXRpdmVfYXJlYV9sZXZlbF8yIiwgInBvbGl0aWNhbCIgXQogICAgICAgICB9LAogICAgICAgICB7CiAgICAgICAgICAgICJsb25nX25hbWUiIDogIklsbGlub2lzIiwKICAgICAgICAgICAgInNob3J0X25hbWUiIDogIklMIiwKICAgICAgICAgICAgInR5cGVzIiA6IFsgImFkbWluaXN0cmF0aXZlX2FyZWFfbGV2ZWxfMSIsICJwb2xpdGljYWwiIF0KICAgICAgICAgfSwKICAgICAgICAgewogICAgICAgICAgICAibG9uZ19uYW1lIiA6ICJVbml0ZWQgU3RhdGVzIiwKICAgICAgICAgICAgInNob3J0X25hbWUiIDogIlVTIiwKICAgICAgICAgICAgInR5cGVzIiA6IFsgImNvdW50cnkiLCAicG9saXRpY2FsIiBdCiAgICAgICAgIH0KICAgICAgXSwKICAgICAgImFkcl9hZGRyZXNzIiA6ICJcdTAwM2NzcGFuIGNsYXNzPVwibG9jYWxpdHlcIlx1MDAzZUNoaWNhZ29cdTAwM2Mvc3Bhblx1MDAzZSwgXHUwMDNjc3BhbiBjbGFzcz1cInJlZ2lvblwiXHUwMDNlSUxcdTAwM2Mvc3Bhblx1MDAzZSwgXHUwMDNjc3BhbiBjbGFzcz1cImNvdW50cnktbmFtZVwiXHUwMDNlVVNBXHUwMDNjL3NwYW5cdTAwM2UiLAogICAgICAiZm9ybWF0dGVkX2FkZHJlc3MiIDogIkNoaWNhZ28sIElMLCBVU0EiLAogICAgICAiZ2VvbWV0cnkiIDogewogICAgICAgICAibG9jYXRpb24iIDogewogICAgICAgICAgICAibGF0IiA6IDQxLjg3ODExMzYsCiAgICAgICAgICAgICJsbmciIDogLTg3LjYyOTc5ODIKICAgICAgICAgfSwKICAgICAgICAgInZpZXdwb3J0IiA6IHsKICAgICAgICAgICAgIm5vcnRoZWFzdCIgOiB7CiAgICAgICAgICAgICAgICJsYXQiIDogNDIuMDIzMTMxLAogICAgICAgICAgICAgICAibG5nIiA6IC04Ny41MjM2NjA5OTk5OTk5OQogICAgICAgICAgICB9LAogICAgICAgICAgICAic291dGh3ZXN0IiA6IHsKICAgICAgICAgICAgICAgImxhdCIgOiA0MS42NDQzMzQ5LAogICAgICAgICAgICAgICAibG5nIiA6IC04Ny45NDAyNjY5CiAgICAgICAgICAgIH0KICAgICAgICAgfQogICAgICB9LAogICAgICAiaWNvbiIgOiAiaHR0cHM6Ly9tYXBzLmdzdGF0aWMuY29tL21hcGZpbGVzL3BsYWNlX2FwaS9pY29ucy9nZW9jb2RlLTcxLnBuZyIsCiAgICAgICJpZCIgOiAiNTNlZWIwMTVkNjEwNTZjNTQyNDVhOTA5Yzc5ODYyNTMyZmM5NTNhZCIsCiAgICAgICJuYW1lIiA6ICJDaGljYWdvIiwKICAgICAgInBob3RvcyIgOiBbCiAgICAgICAgIHsKICAgICAgICAgICAgImhlaWdodCIgOiAzMDI0LAogICAgICAgICAgICAiaHRtbF9hdHRyaWJ1dGlvbnMiIDogWwogICAgICAgICAgICAgICAiXHUwMDNjYSBocmVmPVwiaHR0cHM6Ly9tYXBzLmdvb2dsZS5jb20vbWFwcy9jb250cmliLzEwMzYwMTYyOTYzOTczNTQ3ODk3N1wiXHUwMDNlSmVubmlmZXIgUHJ1c2FrXHUwMDNjL2FcdTAwM2UiCiAgICAgICAgICAgIF0sCiAgICAgICAgICAgICJwaG90b19yZWZlcmVuY2UiIDogIkNtUmFBQUFBV2FJbUI2ZG9HSlpmY1V2LS1HbGVaRTk1eUV3RDdNWkwzaXJTZEgxMFEzR043amdvbTYwZlRVT2p5bWxyUHh0dXZ0ZXlqQ082UTY0WGNiemQ2MlNzQlFhcUt5dm12Y0hGeVRfUUJuaVV5TVBGeUs3TDlKUkVuekVUbmZvQkxjaTZFaEI0M0N5X2Z6MWtEMkhrMDBGM01udnZHaFN5SDZiYkZOMVBrbDFqX28wb2pOOWdxVHhaZHciLAogICAgICAgICAgICAid2lkdGgiIDogNDAzMgogICAgICAgICB9LAogICAgICAgICB7CiAgICAgICAgICAgICJoZWlnaHQiIDogNDUyLAogICAgICAgICAgICAiaHRtbF9hdHRyaWJ1dGlvbnMiIDogWwogICAgICAgICAgICAgICAiXHUwMDNjYSBocmVmPVwiaHR0cHM6Ly9tYXBzLmdvb2dsZS5jb20vbWFwcy9jb250cmliLzEwNTYyMjAxMTQzODcxMTIwNTUzMVwiXHUwMDNlTWFobXV0IFNhbWkgUGFybGFrXHUwMDNjL2FcdTAwM2UiCiAgICAgICAgICAgIF0sCiAgICAgICAgICAgICJwaG90b19yZWZlcmVuY2UiIDogIkNtUmFBQUFBNXREOS1TcTZXNXFJeXQ0VGYyWU9qVGhoR1NJX25NSVpoU3pTdXctTzFtc0d4WXFad2h1c0lUa3lGMmtKcE12NmlTOGJYY3dkUTBrR01qWG5KbzNoX1kzQ3pFbVI2bFBPMnFieVhTMDJaM3ZScHlUazVoR2dwazU2TFk2TTV3b3hFaEJObHlkTkdZU3YxblN6SWRHM0JLaHJHaFJMandoN0R0NFVYS0xjcVF0QTVMYy0xV085akEiLAogICAgICAgICAgICAid2lkdGgiIDogNjc4CiAgICAgICAgIH0sCiAgICAgICAgIHsKICAgICAgICAgICAgImhlaWdodCIgOiAzMDI0LAogICAgICAgICAgICAiaHRtbF9hdHRyaWJ1dGlvbnMiIDogWwogICAgICAgICAgICAgICAiXHUwMDNjYSBocmVmPVwiaHR0cHM6Ly9tYXBzLmdvb2dsZS5jb20vbWFwcy9jb250cmliLzExMTYxNTUwNjc3Nzc3OTEyNTk4N1wiXHUwMDNlSm9lIEJcdTAwM2MvYVx1MDAzZSIKICAgICAgICAgICAgXSwKICAgICAgICAgICAgInBob3RvX3JlZmVyZW5jZSIgOiAiQ21SYUFBQUFDUnI3cDZVc1FFNE96TDZNMmdWbE9yUmJxZVdzb2U3Z3pDQUUyNDF1T2JjdTRBQlgwd2dUaHh5UFhaOVIxWlhRYTN3N3RpcVFvOUVQMnlfQmh1SVo3c1hnZlFHRmZPT3h6NW8yd2tOTlVVNXhCNVFNT3NsUUlLbEU2UUhhWGM0M0VoQS1NUUpQNGI0ZGxiNkpiaVNreElCcUdoUXRXUjdZMElzY3FCR1BZdTZaai1SdjlTeEdoUSIsCiAgICAgICAgICAgICJ3aWR0aCIgOiA0MDMyCiAgICAgICAgIH0sCiAgICAgICAgIHsKICAgICAgICAgICAgImhlaWdodCIgOiAyMzIyLAogICAgICAgICAgICAiaHRtbF9hdHRyaWJ1dGlvbnMiIDogWwogICAgICAgICAgICAgICAiXHUwMDNjYSBocmVmPVwiaHR0cHM6Ly9tYXBzLmdvb2dsZS5jb20vbWFwcy9jb250cmliLzEwMzI4NTgxMTAyNjg5ODgyNzU5NVwiXHUwMDNlUC4gTWVodGFcdTAwM2MvYVx1MDAzZSIKICAgICAgICAgICAgXSwKICAgICAgICAgICAgInBob3RvX3JlZmVyZW5jZSIgOiAiQ21SYUFBQUE1VVg1SEc0VlBvOGdpM1ZROC1haFVYSmVOZ2JWRVloWEljRW16QnRZUHp6UEJzYm80TGd5NWdDNndpOTBsZVROQmwteWNQQVVhLXJib254cUdubWYxN2t6TEdsYjZ0RGJnemFlYlYzdEwyMGpiTjZuU0FHOTNRNmFJZEhyNTRyUEVoQkRCWWVNNHhtRUMxU0M4VDRudkg5Q0doU3puMW9ncWVIbk5Rel9kQUhrTm5GM1o1SDhVQSIsCiAgICAgICAgICAgICJ3aWR0aCIgOiA0MTI4CiAgICAgICAgIH0sCiAgICAgICAgIHsKICAgICAgICAgICAgImhlaWdodCIgOiAzMDI0LAogICAgICAgICAgICAiaHRtbF9hdHRyaWJ1dGlvbnMiIDogWwogICAgICAgICAgICAgICAiXHUwMDNjYSBocmVmPVwiaHR0cHM6Ly9tYXBzLmdvb2dsZS5jb20vbWFwcy9jb250cmliLzExNDYwOTIxNzMzNDg4MjQwOTM3OFwiXHUwMDNlVHJhY3kgTWFydGluXHUwMDNjL2FcdTAwM2UiCiAgICAgICAgICAgIF0sCiAgICAgICAgICAgICJwaG90b19yZWZlcmVuY2UiIDogIkNtUmFBQUFBNG5uZGNlZm1xVUlfTXM2aW1xZV9nMG5PVWtlNUlKU25VcW1UUVZZNkxsNzUwc1pUYzdoZlJkYjBQOVZQWGVscW1fSS1SNms2RXlPY3dIci1SNW1WdjZPQXVsRGl0QTEtR0tNRXluY1ExVFZWOXlHN0FRUEsyeWZRZDdhelJLWTRFaEJtQU5raTY1bE1pYURqcnVFOGNwSTRHaFFRYW91STBLOE5fd1c5RC0wSjVNdXJSdmpUcHciLAogICAgICAgICAgICAid2lkdGgiIDogNDAzMgogICAgICAgICB9LAogICAgICAgICB7CiAgICAgICAgICAgICJoZWlnaHQiIDogMzI2NCwKICAgICAgICAgICAgImh0bWxfYXR0cmlidXRpb25zIiA6IFsKICAgICAgICAgICAgICAgIlx1MDAzY2EgaHJlZj1cImh0dHBzOi8vbWFwcy5nb29nbGUuY29tL21hcHMvY29udHJpYi8xMDA0MTAyNTY0NTMxNjkyNjYzMzdcIlx1MDAzZUFtZXIgTmFoaGFzXHUwMDNjL2FcdTAwM2UiCiAgICAgICAgICAgIF0sCiAgICAgICAgICAgICJwaG90b19yZWZlcmVuY2UiIDogIkNtUmFBQUFBcXpYcVBXU0h2MXpyRzI1cUswNDZObk5JUEhDMUhkcTlsU2pDTzNCRlEyaXFMMW1naXBJZWFNNVVLdHk3SVRqNHVGWC1BdlVzRVhsNzg1X2g1NkhKR2xtX05TcGdqODd2djROLUdULWU5THE1a0xtRnJqWjZzNjdzZjlGeHlYdWVFaENNXzdiVmZOWFY5QWpCMnhyY3lrZk1HaFJEUmY0QWNoNC1XT21nQzlnSkRVTUUzaW5nZ3ciLAogICAgICAgICAgICAid2lkdGgiIDogMTgzNgogICAgICAgICB9LAogICAgICAgICB7CiAgICAgICAgICAgICJoZWlnaHQiIDogMTM2MCwKICAgICAgICAgICAgImh0bWxfYXR0cmlidXRpb25zIiA6IFsKICAgICAgICAgICAgICAgIlx1MDAzY2EgaHJlZj1cImh0dHBzOi8vbWFwcy5nb29nbGUuY29tL21hcHMvY29udHJpYi8xMDY5MDUxNDE2ODc1NTY2ODYzMzdcIlx1MDAzZUFudG9pbmUgSmFzc2VyXHUwMDNjL2FcdTAwM2UiCiAgICAgICAgICAgIF0sCiAgICAgICAgICAgICJwaG90b19yZWZlcmVuY2UiIDogIkNtUmFBQUFBbGRySzV5dDBqellnNlYtM0pDQmxOem1JdnpKRlBIejhrQWp0Y19qUl94eGxQazlvdnY2MnZ4dU5UVnNJRlllN1lnRUJuVTl5N1JDSlRYQkFraGN1QlRZcWZvWU9CMThHWEgyWUFFT21iTnoyQW1JRkxEa3A3cFpRTzBUS0pMOEJFaEFpeUN2bEtIQlRPTjQ1aEdrZHJhN2FHaFFPVlZld2tTcGpFV3dlVTZpMXJRYnpIZ3IxWlEiLAogICAgICAgICAgICAid2lkdGgiIDogMjA0OAogICAgICAgICB9LAogICAgICAgICB7CiAgICAgICAgICAgICJoZWlnaHQiIDogMzQ1NiwKICAgICAgICAgICAgImh0bWxfYXR0cmlidXRpb25zIiA6IFsKICAgICAgICAgICAgICAgIlx1MDAzY2EgaHJlZj1cImh0dHBzOi8vbWFwcy5nb29nbGUuY29tL21hcHMvY29udHJpYi8xMDc3MTQ1MzA3MDQ1NTY1ODgxNTJcIlx1MDAzZUFtYmVyIFJ1ZG9scGhcdTAwM2MvYVx1MDAzZSIKICAgICAgICAgICAgXSwKICAgICAgICAgICAgInBob3RvX3JlZmVyZW5jZSIgOiAiQ21SYUFBQUFVcF9wRF91Q1VPT3NkR3NmZDVUUDlBblVBZFVBNjJrWUhkOUZ6Mkp5aWxwOE1NY1EwcVpGX1BpcEcxMGNnRTFxT1VUYy1pSVFMdUlWSG5yNU1oMWVVMnY5ZDlVckxHdGJxTXJHbHJhM1RIbmU3aTJLTkxYRFVjQWN6akVwQ0F1REVoQkZPM2Uzell5LXdRWVNHOXNCTzhlVUdoU21idzdvdTFBdll0MHFSQU1NQ0MzYVNWdU0zdyIsCiAgICAgICAgICAgICJ3aWR0aCIgOiA0NjA4CiAgICAgICAgIH0sCiAgICAgICAgIHsKICAgICAgICAgICAgImhlaWdodCIgOiAzMDAwLAogICAgICAgICAgICAiaHRtbF9hdHRyaWJ1dGlvbnMiIDogWwogICAgICAgICAgICAgICAiXHUwMDNjYSBocmVmPVwiaHR0cHM6Ly9tYXBzLmdvb2dsZS5jb20vbWFwcy9jb250cmliLzEwNzM0ODc4MTM4MjMxNDgwNTgzM1wiXHUwMDNl0JHQvtCz0LTQsNC9INCi0LrQsNGHXHUwMDNjL2FcdTAwM2UiCiAgICAgICAgICAgIF0sCiAgICAgICAgICAgICJwaG90b19yZWZlcmVuY2UiIDogIkNtUmFBQUFBRnA4aks0OUhZTGtCd19wWUNoa2tjRVpHVnVoTm9HQl9VS2wxcFlfeHF0cHZoRnlTZ3NvbTY3bFFocjhqc1V0OFU3V0ZJTGZGNHI3ZGk3b2tBeWhSVUpGQ2NSY2t4N2ozNEtUUDR2NTZETVhzR0hneWRCYVNDOElxNGlQeDJxd1VFaEFBSS0ycGRFY1p6bnNRTXBjZzhFcDdHaFJGLUtEb1VnTGJOUlR5YjlnZWQyMFpsdzk5aWciLAogICAgICAgICAgICAid2lkdGgiIDogNDAwMAogICAgICAgICB9LAogICAgICAgICB7CiAgICAgICAgICAgICJoZWlnaHQiIDogMTE1MiwKICAgICAgICAgICAgImh0bWxfYXR0cmlidXRpb25zIiA6IFsKICAgICAgICAgICAgICAgIlx1MDAzY2EgaHJlZj1cImh0dHBzOi8vbWFwcy5nb29nbGUuY29tL21hcHMvY29udHJpYi8xMDUxNzA1NzY3NDM1NTcwNzUyMjJcIlx1MDAzZURlZXB0aSBEdWdhclx1MDAzYy9hXHUwMDNlIgogICAgICAgICAgICBdLAogICAgICAgICAgICAicGhvdG9fcmVmZXJlbmNlIiA6ICJDbVJhQUFBQWF3Mlc4ZHVGVnM1eHVZWWVidHJNRUlrNzFqTjNyUC1yVTZrakhPRnNOT1A0RXd5YkZidldGRVM5ak1oNjhndHpxSlBBSGNZeHdyc0UzQVJ1RkkwX3A0QmZjMG9kN19OdlhBNnpvYmJ0QzRTYl9yZ3ZDMWQ5SGdia0daQkpTc240RWhEVDhrVUJVMFFCeUhQZzVXa2FJS0Q4R2hRQUpOcmdTVEFGS2pBYXdfaGY1R1RldU5JQ2d3IiwKICAgICAgICAgICAgIndpZHRoIiA6IDg2NAogICAgICAgICB9CiAgICAgIF0sCiAgICAgICJwbGFjZV9pZCIgOiAiQ2hJSjdjdjAwRHdzRG9nUkFNREFDYTJtNEs4IiwKICAgICAgInJlZmVyZW5jZSIgOiAiQ2hJSjdjdjAwRHdzRG9nUkFNREFDYTJtNEs4IiwKICAgICAgInNjb3BlIiA6ICJHT09HTEUiLAogICAgICAidHlwZXMiIDogWyAibG9jYWxpdHkiLCAicG9saXRpY2FsIiBdLAogICAgICAidXJsIiA6ICJodHRwczovL21hcHMuZ29vZ2xlLmNvbS8/cT1DaGljYWdvLCtJTCwrVVNBJmZ0aWQ9MHg4ODBlMmMzY2QwZjRjYmVkOjB4YWZlMGE2YWQwOWMwYzAwMCIsCiAgICAgICJ1dGNfb2Zmc2V0IiA6IC0zMDAsCiAgICAgICJ2aWNpbml0eSIgOiAiQ2hpY2FnbyIsCiAgICAgICJ3ZWJzaXRlIiA6ICJodHRwOi8vd3d3LmNpdHlvZmNoaWNhZ28ub3JnLyIKICAgfSwKICAgInN0YXR1cyIgOiAiT0siCn0K
+    http_version: null
+  recorded_at: Mon, 08 Jun 2020 02:32:54 GMT
+- request:
+    method: get
+    uri: https://maps.googleapis.com/maps/api/place/photo?key=<GOOGLE_KEY>&maxwidth=400&photoreference=CmRaAAAAWaImB6doGJZfcUv--GleZE95yEwD7MZL3irSdH10Q3GN7jgom60fTUOjymlrPxtuvteyjCO6Q64Xcbzd62SsBQaqKyvmvcHFyT_QBniUyMPFyK7L9JREnzETnfoBLci6EhB43Cy_fz1kD2Hk00F3MnvvGhSyH6bbFN1Pkl1j_o0ojN9gqTxZdw
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Date:
+      - Mon, 08 Jun 2020 02:32:54 GMT
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Location:
+      - https://lh3.googleusercontent.com/p/AF1QipNnXobmciHafcUKOLz_h2_EEFwbajpRyG84MM0a=s1600-w400
+      Content-Type:
+      - text/html; charset=UTF-8
+      Server:
+      - scaffolding on HTTPServer2
+      Content-Length:
+      - '288'
+      X-Xss-Protection:
+      - '0'
+      X-Frame-Options:
+      - SAMEORIGIN
+      Server-Timing:
+      - gfet4t7; dur=34
+      Alt-Svc:
+      - h3-27=":443"; ma=2592000,h3-25=":443"; ma=2592000,h3-T050=":443"; ma=2592000,h3-Q050=":443";
+        ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+    body:
+      encoding: UTF-8
+      string: "<HTML><HEAD><meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<TITLE>302
+        Moved</TITLE></HEAD><BODY>\n<H1>302 Moved</H1>\nThe document has moved\n<A
+        HREF=\"https://lh3.googleusercontent.com/p/AF1QipNnXobmciHafcUKOLz_h2_EEFwbajpRyG84MM0a=s1600-w400\">here</A>.\r\n</BODY></HTML>\r\n"
+    http_version: null
+  recorded_at: Mon, 08 Jun 2020 02:32:54 GMT
+recorded_with: VCR 5.1.0
