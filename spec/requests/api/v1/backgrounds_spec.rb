@@ -7,13 +7,13 @@ RSpec.describe "forcast api", type: :request  do
     end
 
     it "Gets a background image of the location param" do
-      # VCR.use_cassette('background') do
+      VCR.use_cassette('background') do
         location_params = {location: "chicago, il"}
         get @api_url + "backgrounds", params: location_params
-      # end
+      end
         response_json = JSON.parse(response.body, symbolize_names: true)
-        binding.pry
-        # expect(response_json).to
+
+        expect(response_json[:data][:background]).to eq("https://lh3.googleusercontent.com/p/AF1QipNnXobmciHafcUKOLz_h2_EEFwbajpRyG84MM0a=s1600-w400")
     end
   end
 end
