@@ -3,8 +3,8 @@ class FoodTrip
 
   def initialize
     @data = {
-        id: nil,
-        type: nil,
+        id: "null",
+        type: "foodie",
         attributes: {
           end_location: nil,
           travel_time: nil,

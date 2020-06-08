@@ -6,8 +6,8 @@ RSpec.describe "when a client sends a get request to /foodie" do
       VCR.use_cassette('roadtrip') do
         get '/api/v1/foodie?start=denver,co&end=anchorage,co&search=tacos'
       end
-      foodie = JSON.parse(response.body, serialize_names: true)
-
+      foodie = JSON.parse(response.body, symbolize_names: true)
+      binding.pry
       expect(foodie[:data][:id]).to eq("null")
       expect(foodie[:data][:type]).to eq("foodie")
       expect(foodie[:data][:attributes][:end_location]).to eq("3031 Latouche St, Anchorage, AK 99508, USA")
