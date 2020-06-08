@@ -3,7 +3,7 @@ class RestaurantService
   def self.one_restaurant(location)
     service = RestaurantService.new
     response = service.search(location)
-    response[:restaurants][0][:restaurant]
+    Restaurant.new(response[:restaurants][0][:restaurant])
   end
 
 
@@ -15,4 +15,6 @@ class RestaurantService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  
 end
