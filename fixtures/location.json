@@ -1,0 +1,20 @@
+{:results=>
+  [{:address_components=>
+     [{:long_name=>"3031", :short_name=>"3031", :types=>["street_number"]},
+      {:long_name=>"Latouche Street", :short_name=>"Latouche St", :types=>["route"]},
+      {:long_name=>"Rogers Park", :short_name=>"Rogers Park", :types=>["neighborhood", "political"]},
+      {:long_name=>"Anchorage", :short_name=>"Anchorage", :types=>["locality", "political"]},
+      {:long_name=>"Anchorage", :short_name=>"Anchorage", :types=>["administrative_area_level_2", "political"]},
+      {:long_name=>"Alaska", :short_name=>"AK", :types=>["administrative_area_level_1", "political"]},
+      {:long_name=>"United States", :short_name=>"US", :types=>["country", "political"]},
+      {:long_name=>"99508", :short_name=>"99508", :types=>["postal_code"]},
+      {:long_name=>"4202", :short_name=>"4202", :types=>["postal_code_suffix"]}],
+    :formatted_address=>"3031 Latouche St, Anchorage, AK 99508, USA",
+    :geometry=>
+     {:location=>{:lat=>61.19324199999999, :lng=>-149.8596939},
+      :location_type=>"ROOFTOP",
+      :viewport=>{:northeast=>{:lat=>61.1945909802915, :lng=>-149.8583449197085}, :southwest=>{:lat=>61.19189301970849, :lng=>-149.8610428802915}}},
+    :place_id=>"ChIJ0d1sLbGXyFYRitB-yuD4Vc8",
+    :plus_code=>{:compound_code=>"54VR+74 Rogers Park, Anchorage, AK, United States", :global_code=>"93HG54VR+74"},
+    :types=>["establishment", "point_of_interest", "school"]}],
+ :status=>"OK"}
