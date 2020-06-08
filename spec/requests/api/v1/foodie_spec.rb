@@ -12,8 +12,8 @@ RSpec.describe "when a client sends a get request to /foodie" do
       expect(foodie[:data][:type]).to eq("foodie")
       expect(foodie[:data][:attributes][:end_location]).to eq("3031 Latouche St, Anchorage, AK 99508, USA")
       expect(foodie[:data][:attributes][:travel_time]).to eq("2 days 6 hours")
-      expect(foodie[:data][:attributes][:forecast][:summary]).to eq("")
-      expect(foodie[:data][:attributes][:forecast][:temperature]).to eq("")
+      expect(foodie[:data][:attributes][:forecast][:summary]).to eq("overcast clouds")
+      expect(foodie[:data][:attributes][:forecast][:temperature]).to eq(9.53)
       expect(foodie[:data][:attributes][:restaurant][:name]).to eq("")
       expect(foodie[:data][:attributes][:restaurant][:address]).to eq("")
 
