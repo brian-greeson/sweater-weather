@@ -4,10 +4,11 @@ class Api::V1::FoodieController < Api::V1::BaseController
     directions = DirectionService.roadtrip(foodie_params)
     duration = directions[:routes][0][:legs][0][:duration][:text]
     # arrival_time = TODO
-    end_location = LocationService.geocode({location: foodie_params[:end]})
-    end_forecast = ForecastService.forecast(end_location)
-    end_resturant = ResturantService.search(end_location)
 
+    food_trip.end_location = LocationService.geocode({location: foodie_params[:end]})
+    food_trip.forecast = ForecastService.forecast(food_trip.end_location)
+    food_trip.restaurant = RestaurantService.one_restaurant(food_trip.end_location)
+binding.pry
     food_trip.data[:attributes][:end_location] = directions[:routes][0][:legs][0][:end_address]
     food_trip.data[:attributes][:travel_time] = duration
 
