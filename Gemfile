@@ -29,9 +29,12 @@ gem "fast_jsonapi", "~> 1.5"
 
 gem "faraday", "~> 1.0"
 
+gem "jwt"
+
 gem "rspec-rails", "~> 4.0"
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

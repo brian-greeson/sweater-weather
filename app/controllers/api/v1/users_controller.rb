@@ -1,8 +1,11 @@
 class Api::V1::UsersController < Api::V1::BaseController
+
   def create
       user = User.create(user_params)
-      binding.pry
-      render json: user.to_json
+      token = JsonWebToken.encode({user_id: user.id})
+      key_params = {params: {api_key: token}}
+      response.status = :created
+      render json: UserSerializer.new(user, key_params ).serialized_json
   end
 
   private
