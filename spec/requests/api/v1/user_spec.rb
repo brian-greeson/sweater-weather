@@ -11,7 +11,7 @@ RSpec.describe "when a client makes a request to /user" do
       "password": "password",
       "password_confirmation": "password"
     }
-    get '/api/v1/users', params: user_params
+    post '/api/v1/users', params: user_params
     response_json = JSON.parse(response.body, symbolize_names: true)
     user = User.last
 
