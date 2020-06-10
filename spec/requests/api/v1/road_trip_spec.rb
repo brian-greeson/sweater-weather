@@ -11,12 +11,19 @@ RSpec.describe "When a client makes a request to /road_trip" do
         "destination": "Pueblo,CO",
         "api_key": api_key
       }
-      post "/api/v1/road_trip", params: trip_params
-
+      VCR.use_cassette("road_trip") do
+        post "/api/v1/road_trip", params: trip_params
+      end
       response_json = JSON.parse(response.body, symbolize_names: true)
-      
+
       expect(response.status).to eq(200)
-      expect(response_json[:data]).to eq("something here")
+      expect(response_json[:data][:type]).to eq("trip")
+      expect(response_json[:data][:id]).to eq(Trip.first.id.to_s)
+      expect(response_json[:data][:attributes][:origin]).to eq("Denver, CO, USA")
+      expect(response_json[:data][:attributes][:destination]).to eq("Pueblo, CO, USA")
+      expect(response_json[:data][:attributes][:travel_time]).to eq("1 hour 48 mins")
+      expect(response_json[:data][:attributes][:arrival_forecast]).to eq("clear sky")
+
     end
   end
 end
