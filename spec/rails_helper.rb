@@ -75,4 +75,5 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.filter_sensitive_data('<GOOGLE_KEY>') {ENV['GOOGLE_KEY']}
   config.filter_sensitive_data('<OPEN_WEATHER_KEY>') {ENV['OPEN_WEATHER_KEY']}
+  config.default_cassette_options = { allow_playback_repeats: true } 
 end
