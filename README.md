@@ -7,6 +7,7 @@ An api that provides user registration, forecast and road trip data.
   - GOOGLE_KEY
   - OPEN_WEATHER_KEY
 - `rails s`
+
 The api should now be available on your local machine
 ### Available Endpoints
 #### Forecast
