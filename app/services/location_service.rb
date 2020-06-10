@@ -2,7 +2,7 @@ class LocationService
   def self.geocode(forecast_params)
     service = LocationService.new
     json = JSON.parse(service.search(forecast_params[:location]).body, symbolize_names: true)
-    Location.new(json)
+    Location.from_location_service(json)
   end
 
   def search(query)
