@@ -6,7 +6,7 @@ An api that provides user registration, forecast and road trip data.
 - In the root directory, create file `.env`, the application uses the following enviromental variables:
   - GOOGLE_KEY
   - OPEN_WEATHER_KEY
--`rails s`
+- `rails s`
 The api should now be available on your local machine
 ### Available Endpoints
 #### Forecast
