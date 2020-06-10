@@ -12,7 +12,7 @@ class Forecast
   private
 
   def parse_hourly(hourly_data)
-    12.times do |i|
+    24.times do |i|
       @hourly << HourlyConditions.new(hourly_data[i])
     end
   end
