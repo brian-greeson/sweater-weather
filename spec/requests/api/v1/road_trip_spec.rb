@@ -11,7 +11,7 @@ RSpec.describe "When a client makes a request to /road_trip" do
         "destination": "Pueblo,CO",
         "api_key": api_key
       }
-      VCR.use_cassette("road_trip") do
+      VCR.use_cassette("road_trip", match_requests_on: [:path]) do
         post "/api/v1/road_trip", params: trip_params
       end
       response_json = JSON.parse(response.body, symbolize_names: true)
