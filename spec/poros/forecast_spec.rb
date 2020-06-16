@@ -9,7 +9,7 @@ RSpec.describe "forcast poro" do
       expect(forecast.class).to eq(Forecast)
       expect(forecast.current.class).to eq(CurrentConditions)
 
-      expect(forecast.current.time).to eq("10:26 AM, June 7")
+      expect(forecast.current.time).to_not eq("")
       expect(forecast.current.temp).to eq(303.02)
       expect(forecast.current.humidity).to eq(62)
       expect(forecast.current.uv_index).to eq(11.51)

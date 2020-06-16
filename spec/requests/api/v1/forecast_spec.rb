@@ -26,7 +26,7 @@ RSpec.describe "forcast api", type: :request  do
       end
       response_json = JSON.parse(response.body, symbolize_names: true)
 
-      expect(response_json[:data][:current][:time]).to eq("6:01 PM, June 7")
+      expect(response_json[:data][:current][:time]).to_not eq("")
       expect(response_json[:data][:current][:feels_like]).to eq(21.99)
       expect(response_json[:data][:current][:humidity]).to eq(44)
       expect(response_json[:data][:current][:visibility]).to eq(16093)
