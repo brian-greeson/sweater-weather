@@ -4,6 +4,9 @@ cache:
   bundler: true
 rbenv:
 - 2.5.3
+addons:
+  postgresql: 9.6
+  chrome: stable
 before_install:
 - yes | gem update --system --force
 - gem install bundler
