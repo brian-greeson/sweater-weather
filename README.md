@@ -145,3 +145,4 @@ The api should now be available on your local machine
     }
 }
 ```
+## CI using Travis

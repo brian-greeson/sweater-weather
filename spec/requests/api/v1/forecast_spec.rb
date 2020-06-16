@@ -7,7 +7,7 @@ RSpec.describe "forcast api", type: :request  do
     end
 
     it "Gets the coordinates of the location param" do
-      VCR.use_cassette('location') do
+      VCR.use_cassette('location', match_requests_on: [:path]) do
         location_params = {location: "chicago, il"}
         get @api_url + "forecast", params: location_params
       end
@@ -20,7 +20,7 @@ RSpec.describe "forcast api", type: :request  do
     end
 
     it "provides forcast data at the provided location" do
-      VCR.use_cassette('forecast_metric') do
+      VCR.use_cassette('forecast_metric', match_requests_on: [:path]) do
         location_params = {location: "chicago, il"}
         get @api_url + "forecast", params: location_params
       end

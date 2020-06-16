@@ -7,7 +7,7 @@ RSpec.describe "forcast api", type: :request  do
     end
 
     it "Gets a background image of the location param" do
-      VCR.use_cassette('background') do
+      VCR.use_cassette('background', match_requests_on: [:path]) do
         location_params = {location: "chicago, il"}
         get @api_url + "backgrounds", params: location_params
       end
