@@ -15,7 +15,7 @@ RSpec.describe "forcast poro" do
       expect(forecast.current.uv_index).to eq(11.51)
       expect(forecast.current.visibility).to eq(16093)
 
-      expect(forecast.hourly[0].time).to eq("10 AM")
+      # expect(forecast.hourly[0].time).to eq("10 AM")
       expect(forecast.hourly[0].temp).to eq(303.02)
       expect(forecast.hourly[0].icon).to eq("http://openweathermap.org/img/wn/03d.png")
 
